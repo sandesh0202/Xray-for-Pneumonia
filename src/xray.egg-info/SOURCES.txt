@@ -1,0 +1,6 @@
+README.md
+setup.py
+src/xray.egg-info/PKG-INFO
+src/xray.egg-info/SOURCES.txt
+src/xray.egg-info/dependency_links.txt
+src/xray.egg-info/top_level.txt
