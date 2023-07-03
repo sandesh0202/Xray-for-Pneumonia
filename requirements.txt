@@ -15,5 +15,7 @@ scipy
 Flask
 Flask-Cors
 waitress
+boto3
+kaggle
 
 -e .
