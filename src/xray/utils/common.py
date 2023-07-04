@@ -9,8 +9,11 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
+import cv2
 
 
+def resize_image(img_array, size):
+    return cv2.resize(img_array, size)
 
 
 @ensure_annotations

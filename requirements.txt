@@ -17,5 +17,6 @@ Flask-Cors
 waitress
 boto3
 kaggle
+opencv-python
 
 -e .
