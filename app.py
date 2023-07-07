@@ -4,3 +4,10 @@
 #from xray.pipeline.stage_03_training import ModelTrainingPipeline
 #from xray.pipeline.stage_04_evaluation import EvaluationPipeline
 
+from flask import Flask, request, justify, render_template
+import os
+from flask_cors import CORS, cross_origin
+from xray.utils.common import decodeImage
+#from xray.pipeline.predict import PredictionPipeline
+
+ 
