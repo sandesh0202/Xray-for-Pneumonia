@@ -18,5 +18,6 @@ waitress
 boto3
 kaggle
 opencv-python
+scikit-image
 
 -e .
