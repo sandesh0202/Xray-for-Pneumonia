@@ -148,3 +148,7 @@ Expires: Wed, 12 Jul 2023 07:13:19 GMT
 Source-Age: 2
 
 ]
+[2023-07-12 12:49:44,280: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-12 12:49:44,283: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-12 12:49:44,284: INFO: common: created directory at: artifacts]
+[2023-07-12 12:49:44,285: INFO: common: created directory at: artifacts/data_ingestion]
