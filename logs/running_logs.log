@@ -94,3 +94,57 @@
 [2023-07-11 01:14:34,555: INFO: common: created directory at: artifacts]
 [2023-07-11 01:14:34,555: INFO: common: created directory at: artifacts/data_ingestion]
 [2023-07-11 01:14:34,560: INFO: 2671438034: File already exists of size: ~ 2405630 KB]
+[2023-07-12 12:23:42,752: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-12 12:23:42,761: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-12 12:23:42,762: INFO: common: created directory at: artifacts]
+[2023-07-12 12:23:42,764: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-12 12:23:42,766: INFO: 2671438034: File already exists of size: ~ 2405630 KB]
+[2023-07-12 12:27:49,673: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-12 12:27:49,683: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-12 12:27:49,685: INFO: common: created directory at: artifacts]
+[2023-07-12 12:27:49,685: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-12 12:27:49,685: INFO: 2671438034: File already exists of size: ~ 2405630 KB]
+[2023-07-12 12:30:38,997: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-12 12:30:39,000: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-12 12:30:39,003: INFO: common: created directory at: artifacts]
+[2023-07-12 12:30:39,005: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-12 12:30:39,006: INFO: 2671438034: File already exists of size: ~ 2405630 KB]
+[2023-07-12 12:33:37,461: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-12 12:33:37,465: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-12 12:33:37,466: INFO: common: created directory at: artifacts]
+[2023-07-12 12:33:37,468: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-12 12:34:59,249: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-12 12:34:59,253: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-12 12:34:59,255: INFO: common: created directory at: artifacts]
+[2023-07-12 12:34:59,256: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-12 12:38:18,145: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-12 12:38:18,148: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-12 12:38:18,150: INFO: common: created directory at: artifacts]
+[2023-07-12 12:38:18,151: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-12 12:38:28,541: INFO: 1226982078: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 11616915
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "adf745abc03891fe493c3be264ec012691fe3fa21d861f35a27edbe6d86a76b1"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 9F04:36C8:C356:F441:64AE5160
+Accept-Ranges: bytes
+Date: Wed, 12 Jul 2023 07:08:19 GMT
+Via: 1.1 varnish
+X-Served-By: cache-hyd1100024-HYD
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1689145697.790493,VS0,VE2270
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 073a6ff80de3057439a6e8fca4fa324380c48270
+Expires: Wed, 12 Jul 2023 07:13:19 GMT
+Source-Age: 2
+
+]
