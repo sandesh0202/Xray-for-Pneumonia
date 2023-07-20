@@ -1,6 +1,6 @@
 AUGMENTATION: True
-image_size: 224
-IMAGE_SHAPE: [224, 224, 3]
+image_size: 150
+IMAGE_SHAPE: [150, 150, 3]
 BATCH_SIZE: 32
 INCLUDE_TOP: False
 EPOCHS: 12
