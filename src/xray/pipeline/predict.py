@@ -14,16 +14,16 @@ class PredictionPipeline:
         # load model
         model = load_model(os.path.join("artifacts","training", "model.h5"))
 
-        imagename = self.filename
-        test_image = load_img(imagename, target_size = (150,150))
-        test_image = img_to_array(test_image)
-        test_image = np.expand_dims(test_image, axis = 0)
-        result = np.argmax(model.predict(test_image), axis=1)
-        print(result)
+        # Load and preprocess the image
+        image = load_img(self.filename, target_size=(150, 150))
+        image = img_to_array(image)
+        image = image / 255.0 
+        image = np.expand_dims(image, axis=0)
+ 
+        # Make prediction
+        prediction = model.predict(image)
+        labels = ["Pneumonia", "Normal"]
+        predicted_label = labels[int(np.round(prediction[0][0]))]
+        
 
-        if result[0] == 1:
-            prediction = 'Pneumonia'
-            return [{ "image" : prediction}]
-        elif result[0] == 0:
-            prediction = 'Normal'
-            return [{ "image" : prediction}]
+        return [{"prediction": predicted_label}]
