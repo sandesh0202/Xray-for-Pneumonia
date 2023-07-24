@@ -35,9 +35,9 @@ class Training:
         return np.array(data)
     
     def process_data(self):
-        train_data = self.get_training_data('artifacts/data_ingestion/chest_xray/chest_xray/train')
-        test_data = self.get_training_data('artifacts/data_ingestion/chest_xray/chest_xray/test')
-        val_data = self.get_training_data('artifacts/data_ingestion/chest_xray/chest_xray/val')
+        train_data = self.get_training_data('artifacts/data_ingestion/chest_xray/train')
+        test_data = self.get_training_data('artifacts/data_ingestion/chest_xray/test')
+        val_data = self.get_training_data('artifacts/data_ingestion/chest_xray/val')
 
         X_train, y_train = self.process_data_helper(train_data)
         X_test, y_test = self.process_data_helper(test_data)

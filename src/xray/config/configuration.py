@@ -75,7 +75,7 @@ class ConfigurationManager:
         training = self.config.training
         prepare_base_model = self.config.prepare_base_model
         params = self.params
-        training_data=os.path.join(self.config.data_ingestion.unzip_dir, "chest_xray\chest_xray\\test")
+        training_data=os.path.join(self.config.data_ingestion.unzip_dir, "chest_xray")
         create_directories([
             Path(training.root_dir)
         ])
@@ -87,10 +87,8 @@ class ConfigurationManager:
             training_data=Path(training_data),
             params_epochs=params.EPOCHS,
             params_batch_size=params.BATCH_SIZE,
-            params_is_augmentation=params.AUGMENTATION,
             params_image_size=params.IMAGE_SIZE,
-            params_label=params.LABELS,
-            params_class_weights=params.CLASS_WEIGHTS
+            params_label=params.LABELS
         )
         
         return training_config

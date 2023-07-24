@@ -38,7 +38,5 @@ class TrainingConfig:
     training_data: Path
     params_epochs: int
     params_batch_size: int
-    params_is_augmentation: bool
     params_image_size: int
     params_label: list
-    params_class_weights: dict

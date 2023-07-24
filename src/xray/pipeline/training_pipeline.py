@@ -24,6 +24,10 @@ class TrainingPipeline():
         # Train and Save the Model
         history = training.train_model(model, X_train, y_train, X_val, y_val)
         
+        loss, accuracy = model.evaluate(X_test, y_test)
+        print("Loss of the model is -", loss)
+        print("Accuracy of the model is -", accuracy * 100, "%")
+        
         
 STAGE_NAME = "Training Stage"
 

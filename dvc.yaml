@@ -1,0 +1,24 @@
+stages:
+  data_ingestion:
+    cmd: python src/xray/pipeline/ingestion_pipeline.py
+    deps:
+      - src/xray/pipeline/ingestion_pipeline.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/chest_xray/chest_xray
+
+
+  training:
+    cmd: python src/xray/pipeline/training_pipeline.py
+    deps:
+      - src/xray/pipeline/training_pipeline.py
+      - src/xray/components/prepare_callbacks.py
+      - config/config.yaml
+      - artifacts/data_ingestion/chest_xray/chest_xray
+      - artifacts/prepare_base_model
+    params:
+      - IMAGE_SIZE
+      - EPOCHS
+      - BATCH_SIZE
+    outs:
+      - artifacts/training/model.h5
