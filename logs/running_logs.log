@@ -1106,3 +1106,15 @@ FileNotFoundError: [Errno 2] No such file or directory: 'inputImage.jpg'
 [2023-07-24 21:20:57,112: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:20:57] "POST /predict HTTP/1.1" 200 -]
 [2023-07-24 21:21:04,854: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:21:04] "POST /predict HTTP/1.1" 200 -]
 [2023-07-24 21:21:14,406: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:21:14] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:29:43,359: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.196.107:8080]
+[2023-07-24 21:29:43,359: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-24 21:29:46,153: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:29:46] "GET / HTTP/1.1" 200 -]
+[2023-07-24 21:29:55,413: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:29:55] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:30:16,919: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:30:16] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:30:33,938: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:30:33] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:30:47,185: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:30:47] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:31:24,961: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001D7A15144C0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2023-07-24 21:31:24,968: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:31:24] "POST /predict HTTP/1.1" 200 -]
