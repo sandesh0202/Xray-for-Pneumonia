@@ -11,3 +11,5 @@
 7. Update pipeline
 8. Update main.py
 9. Update dvc.yaml
+
+URI - 691258540533.dkr.ecr.ap-south-1.amazonaws.com/xray

@@ -1096,3 +1096,13 @@ FileNotFoundError: [Errno 2] No such file or directory: 'inputImage.jpg'
 [2023-07-24 21:17:23,078: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:17:23] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
 [2023-07-24 21:17:57,743: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:17:57] "GET / HTTP/1.1" 200 -]
 [2023-07-24 21:18:07,777: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:18:07] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:20:33,066: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.196.107:8080]
+[2023-07-24 21:20:33,066: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-24 21:20:35,524: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:20:35] "GET / HTTP/1.1" 200 -]
+[2023-07-24 21:20:43,207: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:20:43] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:20:57,112: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:20:57] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:21:04,854: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:21:04] "POST /predict HTTP/1.1" 200 -]
+[2023-07-24 21:21:14,406: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:21:14] "POST /predict HTTP/1.1" 200 -]
