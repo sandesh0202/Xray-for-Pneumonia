@@ -87,8 +87,8 @@ jobs:
          docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
          
       - name: Stop and remove container if running
-         run: |
-          docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray
+        run: |
+         docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray
        
       - name: Run Docker Image to serve users
         run: |
