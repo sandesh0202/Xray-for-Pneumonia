@@ -10,7 +10,7 @@ try:
     logger.info(f">>>>>>> Stage {STAGE_NAME} Started <<<<<<<")
     data_ingestion = DataIngestionTrainingPipeline()
     data_ingestion.main()
-    logger.info(f">>>>>>> Stage {STAGE_NAME} Completed <<<<<<</n/nx====================x")
+    logger.info(f">>>>>>> Stage {STAGE_NAME} Completed <<<<<<<\n\nx====================x")
      
 except Exception as e:
     logger.exception(e)

@@ -1,0 +1,52 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/xray/pipeline/ingestion_pipeline.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 917aeadd837004a58389f38be0ad6265
+      size: 2326
+    - path: src/xray/pipeline/ingestion_pipeline.py
+      hash: md5
+      md5: aebff20b9a2fbf550370daa75c0d86f4
+      size: 972
+    outs:
+    - path: artifacts/data_ingestion/chest_xray/chest_xray
+      hash: md5
+      md5: f00aa4226d17d32cb15d2d70ee5aacf7.dir
+      size: 1236906774
+      nfiles: 5864
+  training:
+    cmd: python src/xray/pipeline/training_pipeline.py
+    deps:
+    - path: artifacts/data_ingestion/chest_xray/chest_xray
+      hash: md5
+      md5: f00aa4226d17d32cb15d2d70ee5aacf7.dir
+      size: 1236906774
+      nfiles: 5864
+    - path: config/config.yaml
+      hash: md5
+      md5: 917aeadd837004a58389f38be0ad6265
+      size: 2326
+    - path: src/xray/components/prepare_callbacks.py
+      hash: md5
+      md5: d35ab83c1377f11507de67a38eb7bec0
+      size: 1011
+    - path: src/xray/pipeline/training_pipeline.py
+      hash: md5
+      md5: c8e71c9eefb9c3b9b916b390c7a8e0f9
+      size: 1526
+    params:
+      params.yaml:
+        BATCH_SIZE: 32
+        EPOCHS: 12
+        IMAGE_SIZE: 150
+        LABELS:
+        - PNEUMONIA
+        - NORMAL
+    outs:
+    - path: artifacts/training/model.h5
+      hash: md5
+      md5: f99996a890302f059cfe5dd3255cd2c8
+      size: 15066984

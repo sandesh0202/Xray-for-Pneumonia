@@ -15,10 +15,10 @@ stages:
       - src/xray/components/prepare_callbacks.py
       - config/config.yaml
       - artifacts/data_ingestion/chest_xray/chest_xray
-      - artifacts/prepare_base_model
     params:
       - IMAGE_SIZE
       - EPOCHS
       - BATCH_SIZE
+      - LABELS
     outs:
       - artifacts/training/model.h5

@@ -18,7 +18,7 @@ class TrainingPipeline():
         training_config = config.get_training_config()
         training = Training(config=training_config)
         X_train, y_train, X_test, y_test, X_val, y_val = training.process_data()
-        
+         
         model = training.build_model()
 
         # Train and Save the Model

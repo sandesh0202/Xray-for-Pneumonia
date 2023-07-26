@@ -1118,3 +1118,105 @@ FileNotFoundError: [Errno 2] No such file or directory: 'inputImage.jpg'
 [2023-07-24 21:30:47,185: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:30:47] "POST /predict HTTP/1.1" 200 -]
 [2023-07-24 21:31:24,961: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001D7A15144C0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
 [2023-07-24 21:31:24,968: INFO: _internal: 127.0.0.1 - - [24/Jul/2023 21:31:24] "POST /predict HTTP/1.1" 200 -]
+[2023-07-25 19:46:19,328: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.196.107:8080]
+[2023-07-25 19:46:19,328: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-25 19:46:24,817: INFO: _internal: 127.0.0.1 - - [25/Jul/2023 19:46:24] "GET / HTTP/1.1" 200 -]
+[2023-07-25 19:54:11,110: INFO: _internal: 127.0.0.1 - - [25/Jul/2023 19:54:11] "POST /predict HTTP/1.1" 200 -]
+[2023-07-25 19:54:48,292: INFO: _internal: 127.0.0.1 - - [25/Jul/2023 19:54:48] "POST /predict HTTP/1.1" 200 -]
+[2023-07-25 20:12:47,803: INFO: _internal: 127.0.0.1 - - [25/Jul/2023 20:12:47] "POST /predict HTTP/1.1" 200 -]
+[2023-07-25 20:13:04,819: INFO: _internal: 127.0.0.1 - - [25/Jul/2023 20:13:04] "POST /predict HTTP/1.1" 200 -]
+[2023-07-26 15:17:40,398: INFO: ingestion_pipeline: ************************]
+[2023-07-26 15:17:40,398: INFO: ingestion_pipeline: >>>>>>> Stage Data Ingestion Stage Started <<<<<<<]
+[2023-07-26 15:17:40,414: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 15:17:40,419: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 15:17:40,419: INFO: common: created directory at: artifacts]
+[2023-07-26 15:17:40,419: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-26 15:17:40,424: INFO: data_ingestion: File already exists of size: ~ 2405630 KB]
+[2023-07-26 15:18:53,897: INFO: ingestion_pipeline: >>>>>>> Stage Data Ingestion Stage Completed <<<<<<<
+
+************************]
+[2023-07-26 15:30:41,325: INFO: training_pipeline: >>>>>>> Stage Training Stage Started <<<<<<<]
+[2023-07-26 15:30:41,340: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 15:30:41,344: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 15:30:41,344: INFO: common: created directory at: artifacts]
+[2023-07-26 15:30:41,344: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-07-26 15:30:41,349: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-07-26 15:30:41,349: INFO: common: created directory at: artifacts\training]
+[2023-07-26 15:30:41,351: ERROR: training_pipeline: TrainingConfig.__init__() missing 1 required positional argument: 'updated_base_model_path']
+Traceback (most recent call last):
+  File "C:\Programs\xray\src\xray\pipeline\training_pipeline.py", line 38, in <module>
+    obj.main()
+  File "C:\Programs\xray\src\xray\pipeline\training_pipeline.py", line 18, in main
+    training_config = config.get_training_config()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\programs\xray\src\xray\config\configuration.py", line 82, in get_training_config
+    training_config=TrainingConfig(
+                    ^^^^^^^^^^^^^^^
+TypeError: TrainingConfig.__init__() missing 1 required positional argument: 'updated_base_model_path'
+[2023-07-26 15:32:08,992: INFO: main: >>>>>>> Stage Data Ingestion Stage Started <<<<<<<]
+[2023-07-26 15:32:09,004: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 15:32:09,004: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 15:32:09,004: INFO: common: created directory at: artifacts]
+[2023-07-26 15:32:09,004: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-26 15:32:09,004: INFO: data_ingestion: File already exists of size: ~ 2405630 KB]
+[2023-07-26 15:33:23,114: INFO: main: >>>>>>> Stage Data Ingestion Stage Completed <<<<<<</n/nx====================x]
+[2023-07-26 15:33:23,114: INFO: main: ************************]
+[2023-07-26 15:33:23,114: INFO: main: >>>>>>> Stage Training Stage Started <<<<<<<]
+[2023-07-26 15:33:23,124: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 15:33:23,130: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 15:33:23,131: INFO: common: created directory at: artifacts]
+[2023-07-26 15:33:23,132: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-07-26 15:33:23,132: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-07-26 15:33:23,132: INFO: common: created directory at: artifacts\training]
+[2023-07-26 15:33:23,132: ERROR: main: TrainingConfig.__init__() missing 1 required positional argument: 'updated_base_model_path']
+Traceback (most recent call last):
+  File "C:\Programs\xray\main.py", line 26, in <module>
+    obj.main()
+  File "c:\programs\xray\src\xray\pipeline\training_pipeline.py", line 18, in main
+    training_config = config.get_training_config()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\programs\xray\src\xray\config\configuration.py", line 63, in get_training_config
+    training_config=TrainingConfig(
+                    ^^^^^^^^^^^^^^^
+TypeError: TrainingConfig.__init__() missing 1 required positional argument: 'updated_base_model_path'
+[2023-07-26 15:34:39,522: INFO: main: >>>>>>> Stage Data Ingestion Stage Started <<<<<<<]
+[2023-07-26 15:34:39,535: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 15:34:39,542: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 15:34:39,543: INFO: common: created directory at: artifacts]
+[2023-07-26 15:34:39,547: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-07-26 15:34:39,548: INFO: data_ingestion: File already exists of size: ~ 2405630 KB]
+[2023-07-26 15:36:00,728: INFO: main: >>>>>>> Stage Data Ingestion Stage Completed <<<<<<</n/nx====================x]
+[2023-07-26 15:36:00,729: INFO: main: ************************]
+[2023-07-26 15:36:00,729: INFO: main: >>>>>>> Stage Training Stage Started <<<<<<<]
+[2023-07-26 15:36:00,741: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 15:36:00,744: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 15:36:00,744: INFO: common: created directory at: artifacts]
+[2023-07-26 15:36:00,744: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-07-26 15:36:00,744: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-07-26 15:36:00,751: INFO: common: created directory at: artifacts\training]
+[2023-07-26 15:48:46,574: INFO: main: >>>>>>> Stage Training Stage Completed <<<<<<<
+
+x====================x]
+[2023-07-26 15:55:59,363: INFO: training_pipeline: >>>>>>> Stage Training Stage Started <<<<<<<]
+[2023-07-26 15:55:59,377: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 15:55:59,385: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 15:55:59,385: INFO: common: created directory at: artifacts]
+[2023-07-26 15:55:59,385: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-07-26 15:55:59,385: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-07-26 15:55:59,385: INFO: common: created directory at: artifacts\training]
+[2023-07-26 16:07:23,223: INFO: training_pipeline: >>>>>>> Stage Training Stage Completed <<<<<<<
+
+************************]
+[2023-07-26 17:15:47,029: INFO: training_pipeline: >>>>>>> Stage Training Stage Started <<<<<<<]
+[2023-07-26 17:15:47,044: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-07-26 17:15:47,049: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-07-26 17:15:47,051: INFO: common: created directory at: artifacts]
+[2023-07-26 17:15:47,052: INFO: common: created directory at: artifacts\prepare_callbacks\checkpoint_dir]
+[2023-07-26 17:15:47,052: INFO: common: created directory at: artifacts\prepare_callbacks\tensorboard_log_dir]
+[2023-07-26 17:15:47,052: INFO: common: created directory at: artifacts\training]
+[2023-07-26 18:18:24,302: INFO: training_pipeline: >>>>>>> Stage Training Stage Completed <<<<<<<
+
+************************]
