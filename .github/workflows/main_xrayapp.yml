@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://xrayapp.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_36011ea7f6b446f0bd1431676a9329d7 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_a0f6c962f40e4445a6bb23df43e49330 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_c139c7f6c291414eaa81fbd36197b41b }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_c1104f8ba8e34eb0adf1cae412574212 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: xrayapp.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_36011ea7f6b446f0bd1431676a9329d7 }}/xray:${{ github.sha }}
+        tags: xrayapp.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c139c7f6c291414eaa81fbd36197b41b }}/xrayapp/xray:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'xrayapp'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6d61e5aaec374b168344b8f0e4d607ab }}
-        images: 'xrayapp.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_36011ea7f6b446f0bd1431676a9329d7 }}/xray:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_21be2f5d353d4c6eb13208d11a9e7277 }}
+        images: 'xrayapp.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c139c7f6c291414eaa81fbd36197b41b }}/xrayapp/xray:${{ github.sha }}'
