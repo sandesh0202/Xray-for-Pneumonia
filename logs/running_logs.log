@@ -1220,3 +1220,9 @@ x====================x]
 [2023-07-26 18:18:24,302: INFO: training_pipeline: >>>>>>> Stage Training Stage Completed <<<<<<<
 
 ************************]
+[2023-07-26 21:46:16,213: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.196.107:8080]
+[2023-07-26 21:46:16,213: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-07-26 21:46:22,717: INFO: _internal: 127.0.0.1 - - [26/Jul/2023 21:46:22] "GET / HTTP/1.1" 200 -]
