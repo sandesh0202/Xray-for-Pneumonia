@@ -13,3 +13,16 @@
 9. Update dvc.yaml
 
 URI - 691258540533.dkr.ecr.ap-south-1.amazonaws.com/xray
+
+
+login server - xrayapp.azurecr.io
+
+docker build -t xrayapp.azurecr.io/xray:latest .
+
+docker login xrayapp.azurecr.io
+
+docker push xrayapp.azurecr.io/xray:latest
+
+password - 7XNBfpNV7mxkdpNzNQnkIhl0GJPxQez2EZ66i50Wnh+ACRDIVbP9
+
+password2 - JOHqn8BZq1RgR3grEe1omeDe83L3RsrYI8xIrfczKa+ACRCW+bFM
