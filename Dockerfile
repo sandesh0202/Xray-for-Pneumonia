@@ -1,6 +1,6 @@
 FROM python:3.8-slim-buster
 
-RUN apt update -y && apt install awscli -y
+RUN yum update -y && yum install -y awscli
 WORKDIR /app
 
 COPY . /app
