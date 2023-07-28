@@ -14,25 +14,21 @@ permissions:
 jobs:
   integration:
     name: Continuous Integration
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Lint code
-        run: |
-          # Add linting commands here
-          echo "Running linting on repository"
+        run: echo "Linting repository"
 
       - name: Run unit tests
-        run: |
-          # Add unit testing commands here
-          echo "Running unit tests"
+        run: echo "Running unit tests"
 
   build-and-push-ecr-image:
     name: Continuous Delivery
     needs: integration
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -41,7 +37,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -67,8 +62,8 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           
+          
   Continuous-Deployment:
-    name: Continuous Deployment
     needs: build-and-push-ecr-image
     runs-on: self-hosted
     steps:
@@ -85,23 +80,19 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-
+      
+      
       - name: Pull latest images
         run: |
-          # Pull the latest Docker image from ECR
-          docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-
+         docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+         
       - name: Stop and remove container if running
         run: |
-          # Check if a container named "xray" is running, and stop and remove it if it is
-          docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray || echo "No container named 'xray' running"
-
+         docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray
+       
       - name: Run Docker Image to serve users
         run: |
-          # Run the Docker image as a container, exposing it on port 8080
-          docker run -d -p 8080:8080 --name=xray -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-
+         docker run -d -p 8080:8080 --name=xray -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
       - name: Clean previous images and containers
         run: |
-          # Prune unused Docker data to free up space
-          docker system prune -f
+         docker system prune -f

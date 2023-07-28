@@ -1,13 +1,9 @@
-# Start from Amazon Linux image
-FROM amazonlinux:2
+FROM python:3.8-slim-buster
 
-# Install Python and other dependencies
-RUN amazon-linux-extras enable python3
-RUN yum install -y python3 awscli
-
+RUN apt update -y && apt install awscli -y
 WORKDIR /app
 
 COPY . /app
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 CMD [ "python3", "app.py" ]
