@@ -41,7 +41,7 @@ def predictRoute():
     prediction_pipeline = PredictionPipeline(clApp.filename)
     result = prediction_pipeline.predict()
     return jsonify(result)
-
+ 
 
 if __name__ == "__main__":
     clApp = ClientApp()
