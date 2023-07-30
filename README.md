@@ -14,7 +14,6 @@
 
 URI - 691258540533.dkr.ecr.ap-south-1.amazonaws.com/xray
 
-
 login server - xrayapp.azurecr.io
 
 docker build -t xrayapp.azurecr.io/xray:latest .
