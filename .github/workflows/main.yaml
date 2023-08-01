@@ -86,7 +86,7 @@ jobs:
       - name: Copy Apache configuration and WSGI script
         run: |
           mkdir -p apache
-          cp apache/flask-app.conf apache/
+          cp -R apache/* apache/
           cp app.wsgi .
           
 
