@@ -85,7 +85,7 @@ jobs:
       - name: Copy Apache configuration and WSGI script
         run: |
           mkdir -p apache/config
-          cp -R apache/* apache/config/
+          rsync -av apache/* apache/config/
           cp app.wsgi .
 
       - name: Stop and remove container if running
