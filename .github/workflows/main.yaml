@@ -66,7 +66,7 @@ jobs:
   Continuous-Deployment:
     name: Continuous Deployment
     needs: build-and-push-ecr-image
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -82,14 +82,22 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
+
+      - name: Copy Apache configuration and WSGI script
+        run: |
+          mkdir -p apache
+          cp /path/to/Flask-app.conf apache/
+          cp /path/to/app.wsgi .
+
       - name: Stop and remove container if running
         run: |
           docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray || echo "No container named 'xray' running"
-
-      - name: Run Docker Image to serve users
+      
+      # Run the Docker image as a container, exposing it on port 80
+      - name: Run Docker Image on Apache web server
         run: |
-          docker run -d -p 8080:8080 --name=xray -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-
+          docker run -d -p 80:80 --name=my_flask_app -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ steps.build-and-push-ecr-image.outputs.image }}
+      
       - name: Clean previous images and containers
         run: |
           docker system prune -f
