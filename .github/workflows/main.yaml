@@ -86,8 +86,8 @@ jobs:
       - name: Copy Apache configuration and WSGI script
         run: |
           mkdir -p apache
-          cp /path/to/Flask-app.conf apache/
-          cp /path/to/app.wsgi .
+          cp /apache/flask-app.conf apache/
+          cp /app.wsgi .
 
       - name: Stop and remove container if running
         run: |
