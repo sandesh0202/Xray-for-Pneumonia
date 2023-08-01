@@ -86,7 +86,6 @@ jobs:
         run: |
           mkdir -p apache/config
           rsync -av apache/* apache/config/
-          cp app.wsgi .
 
       - name: Stop and remove container if running
         run: |
