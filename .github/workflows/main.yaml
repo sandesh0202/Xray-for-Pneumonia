@@ -82,13 +82,11 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-
       - name: Copy Apache configuration and WSGI script
         run: |
-          mkdir -p apache
-          cp -R apache/* apache/
+          mkdir -p apache/config
+          cp -R apache/* apache/config/
           cp app.wsgi .
-          
 
       - name: Stop and remove container if running
         run: |
