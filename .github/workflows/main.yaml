@@ -66,7 +66,7 @@ jobs:
   Continuous-Deployment:
     name: Continuous Deployment
     needs: build-and-push-ecr-image
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -82,13 +82,9 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Pull latest images
-        run: |
-          docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-
       - name: Stop and remove container if running
         run: |
-          docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray
+          docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray || echo "No container named 'xray' running"
 
       - name: Run Docker Image to serve users
         run: |
