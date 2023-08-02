@@ -89,14 +89,19 @@ jobs:
 
       - name: Stop and remove container if running
         run: |
-          docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray || echo "No container named 'xray' running"
+          docker ps -q --filter "name=xrayapp" | grep -q . && docker stop xrayapp && docker rm -fv xrayapp || echo "No container named 'xrayapp' running"
       
-      #Changes on Morning 02 august
+      - name: Stop and remove container if running
+        run: |
+          docker ps -q --filter "name=apacheapp" | grep -q . && docker stop apacheapp && docker rm -fv apacheapp || echo "No container named 'apacheapp' running"
+
+      - name: Stop and remove container if running
+        run: |
+          docker ps -q --filter "name=apachexray" | grep -q . && docker stop apachexray && docker rm -fv apachexray || echo "No container named 'apachexray' running"
+      
       - name: Run Docker Image on Apache web server
         run: |
-          docker run -d -p 80:80 --name=xrayapp -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-
-      #--name=xray -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+          docker run -d -p 80:80 --name=newxrayapp -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 
       - name: Clean previous images and containers
         run: |
