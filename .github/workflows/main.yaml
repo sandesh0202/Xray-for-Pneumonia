@@ -93,7 +93,7 @@ jobs:
       
       - name: Stop and remove container if running
         run: |
-          docker ps -q --filter "name=apacheapp" | grep -q . && docker stop apacheapp && docker rm -fv apacheapp || echo "No container named 'apacheapp' running"
+          docker ps -q --filter "name=newxrayapp" | grep -q . && docker stop newxrayapp && docker rm -fv newxrayapp || echo "No container named 'newxrayapp' running"
 
       - name: Stop and remove container if running
         run: |
@@ -101,7 +101,7 @@ jobs:
       
       - name: Run Docker Image on Apache web server
         run: |
-          docker run -d -p 80:80 --name=newxrayapp -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+          docker run -d -p 80:80 --name=apachexrayapp -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}' ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 
       - name: Clean previous images and containers
         run: |
