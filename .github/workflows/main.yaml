@@ -87,9 +87,9 @@ jobs:
           mkdir -p apache/config
           rsync -av apache/* apache/config/
 
-      - name: Stop and remove container if running
-        run: |
-          docker ps -q --filter "name=newapachexrayapp" | grep -q . && docker stop newapachexrayapp && docker rm -fv newapachexrayapp || echo "No container named 'newapachexrayapp' running"
+      #- name: Stop and remove container if running
+      #  run: |
+      #    docker ps -q --filter "name=newapachexrayapp" | grep -q . && docker stop newapachexrayapp && docker rm -fv newapachexrayapp || echo "No container named 'newapachexrayapp' running"
       
       - name: Run Docker Image on Apache web server
         run: |
