@@ -13,3 +13,6 @@
 9. Update dvc.yaml
 
 URI - 691258540533.dkr.ecr.ap-south-1.amazonaws.com/xray
+
+## Flask App
+<img width="905" alt="Flask Image Xray" src="https://github.com/sandesh0202/Xray-for-Pneumonia/assets/74035326/4e65bd5a-d7bf-4502-bdb5-7d12ce3bb99d">
