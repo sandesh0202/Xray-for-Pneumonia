@@ -45,5 +45,5 @@ def predictRoute():
 
 if __name__ == "__main__":
     clApp = ClientApp()
-    app.run(host='0.0.0.0', port=8080) #local host and AWS
+    app.run(host='0.0.0.0', port=80) #local host and AWS
     #app.run(host='0.0.0.0', port=80) #AZURE
