@@ -1,8 +1,10 @@
+# Use Python 3.11.3 as the base image
 FROM python:3.11.3
 
-# Install system dependencies
+# Install system dependencies, including AWS CLI
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
-    libgl1-mesa-glx && \
+    libgl1-mesa-glx \
+    awscli && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -15,8 +17,8 @@ COPY . /app
 # Install Python dependencies
 RUN pip install -r requirements.txt
 
-# Expose the PORT environment variable (if your app uses it)
-EXPOSE $PORT
+# Expose port 80 (modify this if your app uses a different port)
+EXPOSE 80
 
-# Start your application using Gunicorn
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+# Specify the command to run your application
+CMD ["python3", "app.py"]
