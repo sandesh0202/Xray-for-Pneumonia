@@ -88,7 +88,7 @@ jobs:
          
       - name: Stop and remove container if running
         run: |
-         docker ps -q --filter "name=xrayp" | grep -q . && docker stop xrayp && docker rm -fv xrayp
+         docker ps -q --filter "name=xray" | grep -q . && docker stop xray && docker rm -fv xray
        
       - name: Run Docker Image to serve users
         run: |
