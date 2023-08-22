@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.11.3
 
 # Install system dependencies
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
