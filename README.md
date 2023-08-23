@@ -18,36 +18,36 @@ This project aims to create a Flask web application for the detection of pneumon
 ## How To Run?
 #### STEPS:
 Clone the repository
-'''https://github.com/sandesh0202/Xray-for-Pneumonia
-'''
+```https://github.com/sandesh0202/Xray-for-Pneumonia
+```
 
 #### STEP 01- Create a conda environment after opening the repository
-'''
+```
 conda create -n xray python=3.11.3 -y
-'''
-'''
+```
+```
 conda activate xray
-'''
+```
 #### STEP 02- install the requirements
-'''
+```
 pip install -r requirements.txt
-'''
-'''
+```
+```
 #Finally run the following command
 python app.py
-'''
+```
 Now, open up you local host and port
 #### DVC cmd
-'''
+```
 dvc init
 dvc repro
 dvc dag
-'''
+```
 
 ### AWS-CICD-Deployment-with-Github-Actions
 #### 1. Login to AWS console.
 #### 2. Create IAM user for deployment
-'''
+```
 #with specific access
 
 1. EC2 access : It is virtual machine
@@ -74,36 +74,36 @@ dvc dag
 2. AmazonEC2FullAccess
 
 Create and Download the Access Key and Secret Access Key from IAM -> Settings
-'''
+```
 #### 3. Create ECR repo to store/save docker image
 - Save the URI - 691258540533.dkr.ecr.ap-south-1.amazonaws.com/xray
 #### 4. Create EC2 machine (Ubuntu)
 #### 5. Open EC2 and Install docker in EC2 Machine:
-'''#optional
+```#optional
 
 sudo apt-get update -y
 
 sudo apt-get upgrade
-'''
+```
 #required
-'''
+```
 curl -fsSL https://get.docker.com -o get-docker.sh
-'''
-'''
+```
+```
 sudo sh get-docker.sh
-'''
-'''
+```
+```
 sudo usermod -aG docker ubuntu
-'''
-'''
+```
+```
 newgrp docker
-'''
+```
 #### 6. Configure EC2 as self-hosted runner:
-'''
+```
 setting>actions>runner>new self hosted runner> choose os> then run command one by one
-'''
+```
 #### 7. Setup github secrets:
-'''
+```
 AWS_ACCESS_KEY_ID=
 
 AWS_SECRET_ACCESS_KEY=
@@ -113,7 +113,7 @@ AWS_REGION = ap-south-1
 AWS_ECR_LOGIN_URI = demo>>  691258540533.dkr.ecr.ap-south-1.amazonaws.com
 
 ECR_REPOSITORY_NAME = xray
-'''
+```
 
 ## Main Files of Structure 
 
