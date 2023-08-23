@@ -18,7 +18,8 @@ This project aims to create a Flask web application for the detection of pneumon
 ## How To Run?
 #### STEPS:
 Clone the repository
-```https://github.com/sandesh0202/Xray-for-Pneumonia
+```
+https://github.com/sandesh0202/Xray-for-Pneumonia
 ```
 
 #### STEP 01- Create a conda environment after opening the repository
@@ -76,10 +77,11 @@ dvc dag
 Create and Download the Access Key and Secret Access Key from IAM -> Settings
 ```
 #### 3. Create ECR repo to store/save docker image
-- Save the URI - 691258540533.dkr.ecr.ap-south-1.amazonaws.com/xray
+Save the URI - demo > 691258540533.dkr.ecr.ap-south-1.amazonaws.com/xray
 #### 4. Create EC2 machine (Ubuntu)
 #### 5. Open EC2 and Install docker in EC2 Machine:
-```#optional
+```
+#optional
 
 sudo apt-get update -y
 
