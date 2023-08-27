@@ -2,7 +2,6 @@ import os
 from xray.constants import *
 from xray.utils.common import read_yaml, create_directories  
 from xray.entity.config_entity import (DataIngestionConfig,
-                                       PrepareBaseModelConfig,
                                        PrepareCallbackConfig,
                                        TrainingConfig                                      
                                     )
