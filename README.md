@@ -7,6 +7,8 @@
 5. [Deployment](#deployment)
 6. [Continuous Integration and Continuous Deployment (CI/CD)](#continuous-integration-and-continuous-deployment-cicd)
 
+Link to Video Explanation of Project - [https://youtu.be/wsyCQOQOwuc?si=Ys4MtYWFtxNy47oJ](https://youtu.be/wsyCQOQOwuc?si=Ys4MtYWFtxNy47oJ)
+
 ## Introduction
 
 This project aims to create a Flask web application for the detection of pneumonia using X-ray images. With a 22-layered neural network model, we have achieved an accuracy rate of 91%. The project is designed with a modular approach, with different files dedicated to data ingestion, preparing callbacks, training, and prediction. Deployment was carried out on AWS using Docker containerization, and we have established a CI/CD pipeline through GitHub Actions.
